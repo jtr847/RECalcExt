@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html>
+<head>
+	<script type="text/javascript" src="houseInfo.js">
+	</script> 
+</head>
 <body>
 
 <h1>Test Page</h1>
 
 <p>Calculation Testing</p>
+<form name="Calc">
+Property Purchase Price: <input type="text" name="price" value="10000">
+Output: <input type="text" name="output">
+<input type="button" OnClick="Calc.output.value = houseInfo(Calc.price.value)">
+</form>
 
-<script type="text/javascript" src="houseInfo.js">
-</script>
+<!-- -->
 
 </body>
 </html>
