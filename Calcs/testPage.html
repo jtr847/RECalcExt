@@ -10,12 +10,22 @@
 
 <p>Calculation Testing</p>
 <form name="Calc">
-Property Purchase Price: <input type="text" name="price" value="10000">
-Output: <input type="text" name="output">
-<input type="button" OnClick="Calc.output.value = houseInfo(Calc.price.value)">
+	<table>
+	<tr>
+		<td>Property Purchase Price:</td>
+		<td><input type="text" name="price" value="10000"> </td>		
+	</tr>
+	<tr>
+		<td>20% Down Payment:</td>
+		<td><input type="text" name="downPayTrad"></td>
+	</tr>
+	<tr>
+		<td>3.5% Down Payment:</td>
+		<td><input type="text" name="downPayFha"></td>
+	</tr>
+	</table>
+<input type="button" OnClick="houseInfo(Calc.price.value)" value="Calculate">
 </form>
-
-<!-- -->
 
 </body>
 </html>
