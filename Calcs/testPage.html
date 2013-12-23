@@ -13,17 +13,34 @@
 <input type="checkbox" name="loan" value="FHA">FHA Loan
 <form name="Calc">
 	<table>
+	<!-- Add feature to reset fields when a new purchase price is entered -->
 	<tr>
 		<td>Property Purchase Price:</td>
 		<td><input type="text" name="price" value="10000"> </td>		
 	</tr>
 	<tr>
+		<td>Cost of Repairs:</td>
+		<td><input type="text" name="repairs"> </td>		
+	</tr>
+	<tr>
 		<td>20% Down Payment:</td>
-		<td><input type="text" name="downPayTrad"></td>
+		<td id="downPayTrad"></td>
 	</tr>
 	<tr>
 		<td>3.5% Down Payment:</td>
-		<td><input type="text" name="downPayFha"></td>
+		<td id="downPayFha"></td>
+	</tr>
+	<tr>
+		<td>Closing Costs:</td>
+		<td><input type="text" name="closeCost"></td>
+	</tr>
+	<tr>
+		<td>Holding Costs:</td>
+		<td><input type="text" name="holdCost"></td>
+	</tr>
+	<tr>
+		<td>Investment Basis:</td>
+		<td id="investBasis" ></td>
 	</tr>
 	</table>
 <input type="button" OnClick="houseInfo(Calc.price.value)" value="Calculate">

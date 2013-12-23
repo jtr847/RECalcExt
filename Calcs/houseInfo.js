@@ -3,21 +3,57 @@ var houseInfo = function (price){
 	var fha = document.getElementsByName('loan')[1].checked;
 
 	if (trad || (!fha && !trad)){
-		tradDownPayment(price);
-	}
+		var downpayment = tradDownPayment(price);
+		}
 	if (fha){
-		fhaDownPayment(price);
-	}
+		var downpaymentFha = fhaDownPayment(price);
+		if (!trad){
+			downpayment = downpaymentFha;
+			}
+		}
+	
+	
+	closeStr = document.getElementsByName('closeCost')[0].value;
+	if (closeStr == null || closeStr.trim() == "") {
+		closeCost = closingCosts(price);
+		}
+	else {
+		closeCost = Math.round(closeStr*100)/100
+		};
+	
+	holdStr = document.getElementsByName('holdCost')[0].value;
+	if (holdStr == null || holdStr.trim() == "") {
+		holdCost = holdingCosts(price);
+		}
+	else {
+		holdCost = Math.round(holdStr*100)/100
+		};
+	
+	repairCost = Math.round(document.getElementsByName('repairs')[0].value * 100)/100;
+	investBasis = closeCost + holdCost + downpayment + repairCost;
+	document.getElementById("investBasis").innerHTML = investBasis;
 }
 
 var tradDownPayment = function (price) {
 	var downPayment = Math.round(price * 0.2 * 100) / 100;
-	document.getElementsByName('downPayTrad')[0].value = downPayment;
+	document.getElementById('downPayTrad').innerHTML = downPayment;
 	return downPayment;
 }
 
 var fhaDownPayment = function (price) {
 	var downPayment = Math.round(price * 0.035 * 100) / 100;
-	document.getElementsByName('downPayFha')[0].value = downPayment;
+	document.getElementById('downPayFha').innerHTML = downPayment;
 	return downPayment;
+}
+
+var closingCosts = function (price) {
+	var closeCost = Math.round(price * 0.02 * 100) / 100;
+	document.getElementsByName('closeCost')[0].value = closeCost;
+	return closeCost;
+}
+
+var holdingCosts = function (price) {
+	var holdCost = Math.round(price * 0.02/3 * 100) / 100;
+	document.getElementsByName('holdCost')[0].value = holdCost;
+	return holdCost;
 }
