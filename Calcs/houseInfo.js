@@ -1,9 +1,10 @@
 var houseInfo = function (price){
 	var trad = document.getElementsByName('loan')[0].checked;
 	var fha = document.getElementsByName('loan')[1].checked;
-
+	
+	var downpayment;
 	if (trad || (!fha && !trad)){
-		var downpayment = tradDownPayment(price);
+		downpayment = tradDownPayment(price);
 		}
 	if (fha){
 		var downpaymentFha = fhaDownPayment(price);
@@ -13,7 +14,8 @@ var houseInfo = function (price){
 		}
 	
 	
-	closeStr = document.getElementsByName('closeCost')[0].value;
+	var closeStr = document.getElementsByName('closeCost')[0].value;
+	var closeCost;
 	if (closeStr == null || closeStr.trim() == "") {
 		closeCost = closingCosts(price);
 		}
@@ -21,7 +23,8 @@ var houseInfo = function (price){
 		closeCost = Math.round(closeStr*100)/100
 		};
 	
-	holdStr = document.getElementsByName('holdCost')[0].value;
+	var holdStr = document.getElementsByName('holdCost')[0].value;
+	var holdCost;
 	if (holdStr == null || holdStr.trim() == "") {
 		holdCost = holdingCosts(price);
 		}
@@ -29,9 +32,11 @@ var houseInfo = function (price){
 		holdCost = Math.round(holdStr*100)/100
 		};
 	
-	repairCost = Math.round(document.getElementsByName('repairs')[0].value * 100)/100;
-	investBasis = closeCost + holdCost + downpayment + repairCost;
+	var repairCost = Math.round(document.getElementsByName('repairs')[0].value * 100)/100;
+	var investBasis = closeCost + holdCost + downpayment + repairCost;
 	document.getElementById("investBasis").innerHTML = investBasis;
+	// add income calculations (adding rent and other income) & writes
+	return [downpayment, downpaymentFha, investBasis];
 }
 
 var tradDownPayment = function (price) {
@@ -53,7 +58,7 @@ var closingCosts = function (price) {
 }
 
 var holdingCosts = function (price) {
-	var holdCost = Math.round(price * 0.02/3 * 100) / 100;
+	var holdCost = Math.round(price * 0.01 * 100) / 100;
 	document.getElementsByName('holdCost')[0].value = holdCost;
 	return holdCost;
 }
