@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" type="text/css" href="style.css">
 	<script type="text/javascript" src="calcs.js"></script>
 	<script type="text/javascript" src="houseInfo.js"></script>
 	<script type="text/javascript" src="finance.js"></script>
 	<script type="text/javascript" src="expenses.js"></script>
+	<script type="text/javascript" src="metrics.js"></script>
 </head>
 <body>
 <!-- change to radio buttons -->
@@ -17,31 +19,36 @@
 		<td>Property Purchase Price*:</td>
 		<td><input type="text" name="price" value="100000"> </td>
 		<td>Income from Rent*:</td>
-		<td><input type="text" name="incomeRent" value="1000"> </td>
+		<td><input type="text" name="incomeRent" value="1500"> </td>
+		
 	</tr>
 	<tr>
 		<td>Cost of Repairs:</td>
 		<td><input type="text" name="repairs"> </td>
 		<td>Other Income:</td>
 		<td><input type="text" name="incomeOther" value="0"> </td>
+
 	</tr>
 	<tr>
 		<td>Closing Costs:</td>
 		<td><input type="text" name="closeCost"></td>
 		<td>Gross Income:</td>
-		<td id="incomeGross">1000</td>
+		<td id="incomeGross">1500</td>
+		
 	</tr>
 	<tr>
 		<td>Holding Costs:</td>
 		<td><input type="text" name="holdCost"></td>
 		<td>Monthly Property Tax:</td>
 		<td><input type="text" name="tax"></td>
+		
 	</tr>
 	<tr>
 		<td>20% Down Payment:</td>
 		<td id="downPayTrad"></td>
 		<td>Monthly Insurance:</td>
 		<td><input type="text" name="insurance"></td>
+		
 	</tr>
 	<tr>
 		<td>3.5% Down Payment:</td>
@@ -81,6 +88,39 @@
 <input type="button" OnClick="calcs(Calc.price.value)" value="Calculate">
 <!-- Add button to clear the fields -->
 </form>
+
+<table id="results">
+	<tr>
+		<th></th>
+		<th>Monthly</th>
+		<th class="spacer"></th>
+		<th>Annually</th>
+	</tr>
+	<tr>
+		<td>Net Operating Income:</td>
+		<td id="monNOI" ></td>
+		<td class="spacer"></td>
+		<td id="NOI"></td>
+	</tr>
+	<tr>
+		<td>Cash Flow:</td>		
+		<td id="monCashFlow" ></td>
+		<td class="spacer"></td>
+		<td id="cashFlow"></td>
+	</tr>
+	<tr>
+		<td>Cap Rate:</td>
+		<td>---</td>
+		<td class="spacer"></td>
+		<td id="capRate" ></td>
+	</tr>
+	<tr>
+		<td>Cash on Cash Return:</td>
+		<td>---</td>
+		<td class="spacer"></td>
+		<td id="CCR" ></td>
+	</tr>
+</table>
 
 </body>
 </html>
