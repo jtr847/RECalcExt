@@ -1,71 +1,20 @@
 var expenses = function (price, incomeNet) {
 
-
-	// // Taxes
-	// var taxStr = document.getElementsByName('tax')[0].value;
-	// if (taxStr == null || taxStr.trim() == "") {
-	// 	var taxes = propTax(price);
-	// 	else {
-	// 		var taxes = Math.round(taxStr * 100) / 100;
-	// 	}
-	// }
-
-	// // Insurance
-	// var insStr = document.getElementsByName('insurance')[0].value;
-	// if (insStr == null || insStr.trim() == "") {
-	// 	var taxes = propTax(price);
-	// else {
-	// 	var taxes = Math.round(taxStr * 100) / 100;
-	// 	}
-	// }
-
-	// var taxStr = document.getElementsByName('tax')[0].value;
-	// if (taxStr == null || taxStr.trim() == "") {
-	// 	var taxes = propTax(price);
-	// else {
-	// 	var taxes = Math.round(taxStr * 100) / 100;
-	// 	}
-	// }
-
-	// var taxStr = document.getElementsByName('tax')[0].value;
-	// if (taxStr == null || taxStr.trim() == "") {
-	// 	var taxes = propTax(price);
-	// else {
-	// 	var taxes = Math.round(taxStr * 100) / 100;
-	// 	}
-	// }
-
-	// var taxStr = document.getElementsByName('tax')[0].value;
-	// if (taxStr == null || taxStr.trim() == "") {
-	// 	var taxes = propTax(price);
-	// else {
-	// 	var taxes = Math.round(taxStr * 100) / 100;
-	// 	}
-	// }
-
-	// var taxStr = document.getElementsByName('tax')[0].value;
-	// if (taxStr == null || taxStr.trim() == "") {
-	// 	var taxes = propTax(price);
-	// else {
-	// 	var taxes = Math.round(taxStr * 100) / 100;
-	// 	}
-	// }
-
+	// Itemized expenses
 	var taxes = checkEmpty(price, incomeNet, 'tax');
-	var insurance = insuranceExp(price);
-	var vacancy = vacancyExp(incomeNet);
-	var management = propMgmtExp(incomeNet);
-	var reserves = capitalReserves(incomeNet);
-	var repairs = repairExp(incomeNet);
+	var insurance = checkEmpty(price, incomeNet, 'insurance');
+	var vacancy = checkEmpty(price, incomeNet, 'vacancyCost');
+	var management = checkEmpty(price, incomeNet, 'managementCost');
+	var reserves = checkEmpty(price, incomeNet, 'reserves');
+	var repairs = checkEmpty(price, incomeNet, 'repairCost');
 
 	// Net expenses (not including debt financing)
 	var expenseNet = taxes + insurance + vacancy + management + reserves + repairs;
 	document.getElementById('totalExp').innerHTML = expenseNet;
-
-
 }
 
 
+// Monthly property taxes
 var propTax = function (price) {
 	var tax = Math.round(price * 0.001 * 100) / 100;
 	document.getElementsByName('tax')[0].value = tax;
@@ -73,6 +22,7 @@ var propTax = function (price) {
 }
 
 
+// Monthly insurance expense
 var insuranceExp = function (price) {
 	var ins = Math.round(price * 0.0013 * 100) / 100;
 	document.getElementsByName('insurance')[0].value = ins;
@@ -80,6 +30,7 @@ var insuranceExp = function (price) {
 }
 
 
+// Monthly vacancy expense
 var vacancyExp = function (incomeNet) {
 	var exp = Math.round(incomeNet * 0.1 * 100) / 100;
 	document.getElementsByName('vacancyCost')[0].value = exp;
@@ -87,6 +38,7 @@ var vacancyExp = function (incomeNet) {
 }
 
 
+// Monthly property management expense
 var propMgmtExp = function (incomeNet) {
 	var exp = Math.round(incomeNet * 0.1 * 100) / 100;
 	document.getElementsByName('managementCost')[0].value = exp;
@@ -94,6 +46,7 @@ var propMgmtExp = function (incomeNet) {
 }
 
 
+// Monthly capital reserves contribution
 var capitalReserves = function (incomeNet) {
 	var exp = Math.round(incomeNet * 0.1 * 100) / 100;
 	document.getElementsByName('reserves')[0].value = exp;
@@ -101,12 +54,15 @@ var capitalReserves = function (incomeNet) {
 }
 
 
+// Monthly repairs expense
 var repairExp = function (incomeNet) {
 	var exp = Math.round(incomeNet * 0.1 * 100) / 100;
 	document.getElementsByName('repairCost')[0].value = exp;
 	return exp;
 }
 
+
+// Function to check if a field is empty, if it is not empty then the field value is used
 var checkEmpty = function (price, incomeNet, searchString) {
 
 	// Get the string in the specified text field
@@ -120,6 +76,22 @@ var checkEmpty = function (price, incomeNet, searchString) {
 
 			case "insurance":
 				var value = insuranceExp(price);
+				break;
+
+			case "vacancyCost":
+				var value = vacancyExp(incomeNet);
+				break;
+
+			case "managementCost":
+				var value = propMgmtExp(incomeNet);
+				break;
+
+			case "reserves":
+				var value = capitalReserves(incomeNet);
+				break;
+
+			case "repairCost":
+				var value = repairExp(incomeNet);
 				break;
 
 			default:

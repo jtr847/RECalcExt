@@ -1,8 +1,12 @@
 var finance = function (price, downpayment) {
 	var loanAmnt = loanAmount(price, downpayment);
+
+	// Interest rate field [%]
 	var intRate = document.getElementsByName('intRate')[0].value / 100;
-	// loan term in months
+
+	// Loan term field [months]
 	var loanTerm = document.getElementsByName('loanLength')[0].value * 12;
+	
 	monPayments(loanAmnt, intRate, loanTerm);
 }
 
@@ -19,3 +23,6 @@ var monPayments = function (loanAmnt, intRate, loanTerm){
 	document.getElementById('payments').innerHTML = payments;
 	return payments;
 }
+
+
+
