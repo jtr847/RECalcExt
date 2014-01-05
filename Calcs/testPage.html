@@ -15,16 +15,25 @@
 <form name="Calc">
 	<table>
 	<!-- Add feature to reset fields when a new purchase price is entered -->
+	<th>
+		<td></td>
+		<td>User Defined</td>
+		<td></td>
+		<td></td>
+		<td>User Defined</td>
+	</th>
 	<tr>
 		<td>Property Purchase Price*:</td>
-		<td><input type="text" name="price" value="100000"> </td>
+		<td><input type="text" name="price" value="100000"> </td>		
+		<td></td>
 		<td>Income from Rent*:</td>
 		<td><input type="text" name="incomeRent" value="1500"> </td>
 		
 	</tr>
 	<tr>
 		<td>Cost of Repairs:</td>
-		<td><input type="text" name="repairs"> </td>
+		<td><input type="text" name="repairs" value="0"> </td>
+		<td></td>
 		<td>Other Income:</td>
 		<td><input type="text" name="incomeOther" value="0"> </td>
 
@@ -32,6 +41,7 @@
 	<tr>
 		<td>Closing Costs:</td>
 		<td><input type="text" name="closeCost"></td>
+		<td><input type="checkbox" name="closeChk"></td>
 		<td>Gross Income:</td>
 		<td id="incomeGross">1500</td>
 		
@@ -39,44 +49,55 @@
 	<tr>
 		<td>Holding Costs:</td>
 		<td><input type="text" name="holdCost"></td>
+		<td><input type="checkbox" name="holdChk"></td>
 		<td>Monthly Property Tax:</td>
 		<td><input type="text" name="tax"></td>
-		
+		<td><input type="checkbox" name="taxChk"></td>
 	</tr>
 	<tr>
 		<td>20% Down Payment:</td>
 		<td id="downPayTrad"></td>
+		<td></td>
 		<td>Monthly Insurance:</td>
 		<td><input type="text" name="insurance"></td>
-		
+		<td><input type="checkbox" name="insChk"></td>
 	</tr>
 	<tr>
 		<td>3.5% Down Payment:</td>
 		<td id="downPayFha"></td>
+		<td></td>
 		<td>Vacancy:</td>
 		<td><input type="text" name="vacancyCost"></td>
+		<td><input type="checkbox" name="vacChk"></td>
 	</tr>
 	<tr>
 		<td>Investment Basis:</td>
 		<td id="investBasis" ></td>
+		<td></td>
 		<td>Property Management Cost:</td>
 		<td><input type="text" name="managementCost"></td>
+		<td><input type="checkbox" name="mgmtChk"></td>
 	</tr>
 	<tr>
 		<td>Loan Amount:</td>
 		<td id="loanAmnt" ></td>
+		<td></td>
 		<td>Capital Reserves:</td>
 		<td><input type="text" name="reserves"></td>
+		<td><input type="checkbox" name="capChk"></td>
 	</tr>
 	<tr>
 		<td>Interest Rate (%)*:</td>
 		<td><input type="text" name="intRate" value="8"></td>
+		<td></td>
 		<td>Repairs:</td>
 		<td><input type="text" name="repairCost"></td>
+		<td><input type="checkbox" name="repChk"></td>
 	</tr>
 	<tr>
 		<td>Length of Loan (years)*:</td>
 		<td><input type="text" name="loanLength" value="30"></td>
+		<td></td>
 		<td>Total Expenses:</td>
 		<td id="totalExp"></td>
 	</tr>

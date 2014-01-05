@@ -18,25 +18,20 @@ var houseInfo = function (price){
 	
 	
 	// Closing costs
-	var closeStr = document.getElementsByName('closeCost')[0].value;
-	var closeCost;
-	if (closeStr == null || closeStr.trim() == "") {
+	if (document.getElementsByName('closeChk')[0].checked) {
+		closeCost = Math.round(document.getElementsByName('closeCost')[0].value*100)/100;
+	}else {
 		closeCost = closingCosts(price);
-		}
-	else {
-		closeCost = Math.round(closeStr*100)/100
-		};
+	}
 	
 
 	// Holding costs
-	var holdStr = document.getElementsByName('holdCost')[0].value;
-	var holdCost;
-	if (holdStr == null || holdStr.trim() == "") {
+	if (document.getElementsByName('holdChk')[0].checked) {
+		holdCost = Math.round(document.getElementsByName('holdCost')[0].value*100)/100;
+	}else {
 		holdCost = holdingCosts(price);
-		}
-	else {
-		holdCost = Math.round(holdStr*100)/100
-		};
+	}
+	
 	
 	// Initial cost of repairs
 	var repairCost = Math.round(document.getElementsByName('repairs')[0].value * 100)/100;
