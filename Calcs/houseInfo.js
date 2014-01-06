@@ -33,15 +33,15 @@ var houseInfo = function (price){
 	// Initial cost of repairs
 	var repairCost = Math.round(document.getElementsByName('repairs')[0].value * 100)/100;
 	// Total investment basis
-	var investBasis = closeCost + holdCost + downpayment + repairCost;	
-	document.getElementById("investBasis").innerHTML = investBasis;
+	var investBasis = closeCost + holdCost + downpayment + repairCost;
+	document.getElementById("investBasis").innerHTML = '$'+investBasis;
 	return [downpayment, investBasis];
 }
 
 
 var tradDownPayment = function (price) {
 	var downPayment = Math.round(price * 0.2 * 100) / 100;
-	document.getElementById('downPay').innerHTML = downPayment;
+	document.getElementById('downPay').innerHTML = '$'+downPayment;
 	document.getElementById('downPayTxt').innerHTML = 'Down Payment (20%)';
 	return downPayment;
 }
@@ -49,7 +49,7 @@ var tradDownPayment = function (price) {
 
 var fhaDownPayment = function (price) {
 	var downPayment = Math.round(price * 0.035 * 100) / 100;
-	document.getElementById('downPay').innerHTML = downPayment;
+	document.getElementById('downPay').innerHTML = '$'+downPayment;
 	document.getElementById('downPayTxt').innerHTML = 'Down Payment (3.5%)';
 	return downPayment;
 }
@@ -58,7 +58,7 @@ var fhaDownPayment = function (price) {
 var custDownPayment = function (price) {
 	var perc = document.getElementsByName('loan')[3].value;
 	var downPayment = Math.round(price * perc) / 100;
-	document.getElementById('downPay').innerHTML = downPayment;
+	document.getElementById('downPay').innerHTML = '$'+downPayment;
 	document.getElementById('downPayTxt').innerHTML = 'Down Payment (' + perc + '%)';
 	return downPayment;
 }

@@ -6,7 +6,7 @@ var calcs = function(price) {
 	var incomeOther = parseFloat(document.getElementsByName('incomeOther')[0].value);
 
 	var incomeNet = incomeRent + incomeOther;
-	document.getElementById('incomeGross').innerHTML = incomeNet;
+	document.getElementById('incomeGross').innerHTML = '$'+incomeNet;
 
 	var expenseTot = expenses(price, incomeNet);
 	metrics(incomeNet, expenseTot, monPayments, price, houseCalcs[1]);

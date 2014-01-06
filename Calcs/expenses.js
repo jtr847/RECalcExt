@@ -10,7 +10,7 @@ var expenses = function (price, incomeNet) {
 
 	// Net expenses (not including debt financing)
 	var expenseNet = taxes + insurance + vacancy + management + reserves + repairs;
-	document.getElementById('totalExp').innerHTML = expenseNet;
+	document.getElementById('totalExp').innerHTML = '$'+expenseNet;
 	return expenseNet;
 }
 
