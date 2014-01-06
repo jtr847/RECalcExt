@@ -4,8 +4,8 @@ var metrics = function (incomeNet, expTotal, monPay, price, invBasis) {
 	var NOI = Math.round(monNOI * 12 * 100) / 100;
 	document.getElementById('NOI').innerHTML = '$' + NOI;
 
-	var monCashFlow = monthlyCashFlow(NOI, monPay);
-	var cashFlow = Math.round(monNOI * 12 * 100) / 100;
+	var monCashFlow = monthlyCashFlow(monNOI, monPay);
+	var cashFlow = Math.round(monCashFlow * 12 * 100) / 100;
 	document.getElementById('cashFlow').innerHTML = '$' + cashFlow;
 
 	capRate(NOI, price);

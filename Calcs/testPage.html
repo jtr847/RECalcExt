@@ -7,28 +7,30 @@
 	<script type="text/javascript" src="finance.js"></script>
 	<script type="text/javascript" src="expenses.js"></script>
 	<script type="text/javascript" src="metrics.js"></script>
+	<script type="text/javascript" src="defaults.js"></script>
 </head>
 <body>
-<!-- change to radio buttons -->
-<input type="checkbox" name="loan" value="Trad">Traditional Loan
-<input type="checkbox" name="loan" value="FHA">FHA Loan
+<input type="radio" name="loan" value="Trad" checked>Traditional Loan
+<input type="radio" name="loan" value="FHA">FHA Loan
+<input type="radio" name="loan" value="Custom">Custom
+<input type="text" name="loan" value="20" size="1">%
 <form name="Calc">
 	<table>
 	<!-- Add feature to reset fields when a new purchase price is entered -->
+	<!-- ^^ Don't need this w/ new checkboxes?? ^^ -->
 	<th>
 		<td></td>
-		<td>User Defined</td>
+		<td>User<br> Defined</td>
 		<td></td>
 		<td></td>
-		<td>User Defined</td>
+		<td>User<br> Defined</td>
 	</th>
 	<tr>
 		<td>Property Purchase Price*:</td>
 		<td><input type="text" name="price" value="100000"> </td>		
 		<td></td>
 		<td>Income from Rent*:</td>
-		<td><input type="text" name="incomeRent" value="1500"> </td>
-		
+		<td><input type="text" name="incomeRent" value="1500"> </td>		
 	</tr>
 	<tr>
 		<td>Cost of Repairs:</td>
@@ -36,15 +38,13 @@
 		<td></td>
 		<td>Other Income:</td>
 		<td><input type="text" name="incomeOther" value="0"> </td>
-
 	</tr>
 	<tr>
 		<td>Closing Costs:</td>
 		<td><input type="text" name="closeCost"></td>
 		<td><input type="checkbox" name="closeChk"></td>
 		<td>Gross Income:</td>
-		<td id="incomeGross">1500</td>
-		
+		<td id="incomeGross">1500</td>		
 	</tr>
 	<tr>
 		<td>Holding Costs:</td>
@@ -55,59 +55,55 @@
 		<td><input type="checkbox" name="taxChk"></td>
 	</tr>
 	<tr>
-		<td>20% Down Payment:</td>
-		<td id="downPayTrad"></td>
+		<td id="downPayTxt">Down Payment:</td>
+		<td id="downPay"></td>
 		<td></td>
 		<td>Monthly Insurance:</td>
 		<td><input type="text" name="insurance"></td>
 		<td><input type="checkbox" name="insChk"></td>
 	</tr>
 	<tr>
-		<td>3.5% Down Payment:</td>
-		<td id="downPayFha"></td>
+		<td>Investment Basis:</td>
+		<td id="investBasis"></td>
 		<td></td>
 		<td>Vacancy:</td>
 		<td><input type="text" name="vacancyCost"></td>
 		<td><input type="checkbox" name="vacChk"></td>
 	</tr>
 	<tr>
-		<td>Investment Basis:</td>
-		<td id="investBasis" ></td>
+		<td>Loan Amount:</td>
+		<td id="loanAmnt"></td>
 		<td></td>
 		<td>Property Management Cost:</td>
 		<td><input type="text" name="managementCost"></td>
 		<td><input type="checkbox" name="mgmtChk"></td>
 	</tr>
 	<tr>
-		<td>Loan Amount:</td>
-		<td id="loanAmnt" ></td>
+		<td>Interest Rate (%)*:</td>
+		<td><input type="text" name="intRate" value="8"></td>
 		<td></td>
 		<td>Capital Reserves:</td>
 		<td><input type="text" name="reserves"></td>
 		<td><input type="checkbox" name="capChk"></td>
 	</tr>
 	<tr>
-		<td>Interest Rate (%)*:</td>
-		<td><input type="text" name="intRate" value="8"></td>
+		<td>Length of Loan (years)*:</td>
+		<td><input type="text" name="loanLength" value="30"></td>
 		<td></td>
 		<td>Repairs:</td>
 		<td><input type="text" name="repairCost"></td>
 		<td><input type="checkbox" name="repChk"></td>
 	</tr>
 	<tr>
-		<td>Length of Loan (years)*:</td>
-		<td><input type="text" name="loanLength" value="30"></td>
+		<td>Monthly Payments:</td>
+		<td id="payments"></td>
 		<td></td>
 		<td>Total Expenses:</td>
 		<td id="totalExp"></td>
 	</tr>
-	<tr>
-		<td>Monthly Payments:</td>
-		<td id="payments"></td>
-	</tr>
 	</table>
 <input type="button" OnClick="calcs(Calc.price.value)" value="Calculate">
-<!-- Add button to clear the fields -->
+<input type="button" OnClick="defaults()" value="Clear">
 </form>
 
 <table id="results">

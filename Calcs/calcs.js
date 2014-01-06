@@ -9,5 +9,5 @@ var calcs = function(price) {
 	document.getElementById('incomeGross').innerHTML = incomeNet;
 
 	var expenseTot = expenses(price, incomeNet);
-	metrics(incomeNet, expenseTot, monPayments, price, houseCalcs[2]);
+	metrics(incomeNet, expenseTot, monPayments, price, houseCalcs[1]);
 }
