@@ -1,12 +1,12 @@
 var expenses = function (price, incomeNet) {
 
 	// Itemized expenses
-	var taxes = checkEmpty(price, incomeNet, 'tax', 'taxChk');
-	var insurance = checkEmpty(price, incomeNet, 'insurance', 'insChk');
-	var vacancy = checkEmpty(price, incomeNet, 'vacancyCost', 'vacChk');
+	var taxes 	   = checkEmpty(price, incomeNet, 'tax', 'taxChk');
+	var insurance  = checkEmpty(price, incomeNet, 'insurance', 'insChk');
+	var vacancy    = checkEmpty(price, incomeNet, 'vacancyCost', 'vacChk');
 	var management = checkEmpty(price, incomeNet, 'managementCost', 'mgmtChk');
-	var reserves = checkEmpty(price, incomeNet, 'reserves', 'capChk');
-	var repairs = checkEmpty(price, incomeNet, 'repairCost', 'repChk');
+	var reserves   = checkEmpty(price, incomeNet, 'reserves', 'capChk');
+	var repairs    = checkEmpty(price, incomeNet, 'repairCost', 'repChk');
 
 	// Net expenses (not including debt financing)
 	var expenseNet = taxes + insurance + vacancy + management + reserves + repairs;

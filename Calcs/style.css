@@ -16,3 +16,19 @@
 td.spacer {
 	width: 2em;
 }
+
+div.houseInfo {
+	background-color: green;
+	float: left;
+}
+
+div.incomeInfo {
+	background-color: blue;
+	float: left;
+}
+
+div.results {
+	background-color: red;
+	/*float: bottom;*/
+	clear: both;
+}

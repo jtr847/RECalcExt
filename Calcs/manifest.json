@@ -1,0 +1,12 @@
+{
+  "manifest_version": 2,
+
+  "name": "RE Investment Calculator",
+  "description": "This extension performs calculations relavent to rental property investments",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "house_icon.png",
+    "default_popup": "testPage.html"
+  }
+}

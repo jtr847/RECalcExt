@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<script type="text/javascript"src="jquery-2.0.3.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script type="text/javascript" src="calcs.js"></script>
 	<script type="text/javascript" src="houseInfo.js"></script>
@@ -10,134 +11,159 @@
 	<script type="text/javascript" src="defaults.js"></script>
 </head>
 <body>
-<input type="radio" name="loan" value="Trad" checked>Traditional Loan
-<input type="radio" name="loan" value="FHA">FHA Loan
-<input type="radio" name="loan" value="Custom">Custom
-<input type="text" name="loan" value="20" size="1">%
+<div>
+	<input type="radio" name="loan" value="Trad" checked>Traditional Loan
+	<input type="radio" name="loan" value="FHA">FHA Loan
+	<input type="radio" name="loan" value="Custom">Custom
+	<input type="text" name="loan" value="20" size="1">%
+</div>
 <form name="Calc">
+<div class="houseInfo">
 	<table>
-	<!-- Add feature to reset fields when a new purchase price is entered -->
-	<!-- ^^ Don't need this w/ new checkboxes?? ^^ -->
-	<th>
-		<td></td>
-		<td>User<br> Defined</td>
-		<td></td>
-		<td></td>
-		<td>User<br> Defined</td>
-	</th>
-	<tr>
-		<td>Property Purchase Price*:</td>
-		<td><input type="text" name="price" value="100000"> </td>		
-		<td></td>
-		<td>Income from Rent*:</td>
-		<td><input type="text" name="incomeRent" value="1500"> </td>		
-	</tr>
-	<tr>
-		<td>Cost of Repairs:</td>
-		<td><input type="text" name="repairs" value="0"> </td>
-		<td></td>
-		<td>Other Income:</td>
-		<td><input type="text" name="incomeOther" value="0"> </td>
-	</tr>
-	<tr>
-		<td>Closing Costs:</td>
-		<td><input type="text" name="closeCost"></td>
-		<td><input type="checkbox" name="closeChk"></td>
-		<td>Gross Income:</td>
-		<td id="incomeGross">$1500</td>
-	</tr>
-	<tr>
-		<td>Holding Costs:</td>
-		<td><input type="text" name="holdCost"></td>
-		<td><input type="checkbox" name="holdChk"></td>
-		<td>Monthly Property Tax:</td>
-		<td><input type="text" name="tax"></td>
-		<td><input type="checkbox" name="taxChk"></td>
-	</tr>
-	<tr>
-		<td id="downPayTxt">Down Payment:</td>
-		<td id="downPay"></td>
-		<td></td>
-		<td>Monthly Insurance:</td>
-		<td><input type="text" name="insurance"></td>
-		<td><input type="checkbox" name="insChk"></td>
-	</tr>
-	<tr>
-		<td>Investment Basis:</td>
-		<td id="investBasis"></td>
-		<td></td>
-		<td>Vacancy:</td>
-		<td><input type="text" name="vacancyCost"></td>
-		<td><input type="checkbox" name="vacChk"></td>
-	</tr>
-	<tr>
-		<td>Loan Amount:</td>
-		<td id="loanAmnt"></td>
-		<td></td>
-		<td>Property Management Cost:</td>
-		<td><input type="text" name="managementCost"></td>
-		<td><input type="checkbox" name="mgmtChk"></td>
-	</tr>
-	<tr>
-		<td>Interest Rate (%)*:</td>
-		<td><input type="text" name="intRate" value="8"></td>
-		<td></td>
-		<td>Capital Reserves:</td>
-		<td><input type="text" name="reserves"></td>
-		<td><input type="checkbox" name="capChk"></td>
-	</tr>
-	<tr>
-		<td>Length of Loan (years)*:</td>
-		<td><input type="text" name="loanLength" value="30"></td>
-		<td></td>
-		<td>Repairs:</td>
-		<td><input type="text" name="repairCost"></td>
-		<td><input type="checkbox" name="repChk"></td>
-	</tr>
-	<tr>
-		<td>Monthly Payments:</td>
-		<td id="payments"></td>
-		<td></td>
-		<td>Total Expenses:</td>
-		<td id="totalExp"></td>
-	</tr>
+		<th>
+			<td></td>
+			<td>User<br> Defined</td>
+		</th>
+		<tr>
+			<td>Property Purchase Price*:</td>
+			<td><input type="text" name="price" value="100000"> </td>		
+			<td></td>
+		</tr>
+		<tr>
+			<td>Cost of Repairs:</td>
+			<td><input type="text" name="repairs" value="0"> </td>
+		</tr>
+		<tr>
+			<td>Closing Costs:</td>
+			<td><input type="text" name="closeCost"></td>
+			<td><input type="checkbox" name="closeChk"></td>
+		</tr>
+		<tr>
+			<td>Holding Costs:</td>
+			<td><input type="text" name="holdCost"></td>
+			<td><input type="checkbox" name="holdChk"></td>
+		</tr>
+		<tr>
+			<td id="downPayTxt">Down Payment:</td>
+			<td id="downPay"></td>
+		</tr>
+		<tr>
+			<td>Investment Basis:</td>
+			<td id="investBasis"></td>
+		</tr>
+		<tr>
+			<td>Loan Amount:</td>
+			<td id="loanAmnt"></td>
+		</tr>
+		<tr>
+			<td>Interest Rate (%)*:</td>
+			<td><input type="text" name="intRate" value="8"></td>
+		</tr>
+		<tr>
+			<td>Length of Loan (years)*:</td>
+			<td><input type="text" name="loanLength" value="30"></td>
+		</tr>
+		<tr>
+			<td>Monthly Payments:</td>
+			<td id="payments"></td>
+		</tr>
 	</table>
-<input type="button" OnClick="calcs(Calc.price.value)" value="Calculate">
-<input type="button" OnClick="defaults()" value="Clear">
+</div>
+
+<div class="incomeInfo">
+	<table>
+		<th>
+			<td></td>
+			<td>User<br> Defined</td>
+		</th>
+		<tr>
+			<td>Income from Rent*:</td>
+			<td><input type="text" name="incomeRent" value="1500"> </td>
+		</tr>
+		<tr>
+			<td>Other Income:</td>
+			<td><input type="text" name="incomeOther" value="0"> </td>
+		</tr>
+		<tr>
+			<td>Gross Income:</td>
+			<td id="incomeGross">$1500</td>
+		</tr>
+		<tr>
+			<td>Monthly Property Tax:</td>
+			<td><input type="text" name="tax"></td>
+			<td><input type="checkbox" name="taxChk"></td>
+		</tr>		
+		<tr>
+			<td>Monthly Insurance:</td>
+			<td><input type="text" name="insurance"></td>
+			<td><input type="checkbox" name="insChk"></td>
+		</tr>
+		<tr>
+			<td>Vacancy:</td>
+			<td><input type="text" name="vacancyCost"></td>
+			<td><input type="checkbox" name="vacChk"></td>
+		</tr>
+		<tr>
+			<td>Property Management Cost:</td>
+			<td><input type="text" name="managementCost"></td>
+			<td><input type="checkbox" name="mgmtChk"></td>
+		</tr>
+		<tr>
+			<td>Capital Reserves:</td>
+			<td><input type="text" name="reserves"></td>
+			<td><input type="checkbox" name="capChk"></td>
+		</tr>
+		<tr>
+			<td>Repairs:</td>
+			<td><input type="text" name="repairCost"></td>
+			<td><input type="checkbox" name="repChk"></td>
+		</tr>
+		<tr>
+			<td>Total Expenses:</td>
+			<td id="totalExp"></td>
+		</tr>
+	</table>
+</div>
+
+<div>
+	<input type="button" id="calcs" value="Calculate">
+	<input type="button" id="clear" value="Clear"> 
+</div>
 </form>
 
-<table id="results">
-	<tr>
-		<th></th>
-		<th>Monthly</th>
-		<th class="spacer"></th>
-		<th>Annually</th>
-	</tr>
-	<tr>
-		<td>Net Operating Income:</td>
-		<td id="monNOI" ></td>
-		<td class="spacer"></td>
-		<td id="NOI"></td>
-	</tr>
-	<tr>
-		<td>Cash Flow:</td>		
-		<td id="monCashFlow" ></td>
-		<td class="spacer"></td>
-		<td id="cashFlow"></td>
-	</tr>
-	<tr>
-		<td>Cap Rate:</td>
-		<td>---</td>
-		<td class="spacer"></td>
-		<td id="capRate" ></td>
-	</tr>
-	<tr>
-		<td>Cash on Cash Return:</td>
-		<td>---</td>
-		<td class="spacer"></td>
-		<td id="CCR" ></td>
-	</tr>
-</table>
-
+<div class="results">
+	<table id="results">
+		<tr>
+			<th></th>
+			<th>Monthly</th>
+			<th class="spacer"></th>
+			<th>Annually</th>
+		</tr>
+		<tr>
+			<td>Net Operating Income:</td>
+			<td id="monNOI" ></td>
+			<td class="spacer"></td>
+			<td id="NOI"></td>
+		</tr>
+		<tr>
+			<td>Cash Flow:</td>		
+			<td id="monCashFlow" ></td>
+			<td class="spacer"></td>
+			<td id="cashFlow"></td>
+		</tr>
+		<tr>
+			<td>Cap Rate:</td>
+			<td>---</td>
+			<td class="spacer"></td>
+			<td id="capRate" ></td>
+		</tr>
+		<tr>
+			<td>Cash on Cash Return:</td>
+			<td>---</td>
+			<td class="spacer"></td>
+			<td id="CCR" ></td>
+		</tr>
+	</table>
+</div>
 </body>
 </html>
