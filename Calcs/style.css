@@ -1,17 +1,6 @@
-/*#results {
-	border: 50px;
-	background-color: green;
-	border-collapse: separate;
-	border-spacing: 5px;
+html * {
+	font-size: 14px !important;	
 }
-
-#results  td {
-	padding: 16px;
-}
-
-#results  tr {
-	padding: 20px;
-}*/
 
 td.spacer {
 	width: 2em;
@@ -23,12 +12,29 @@ div.houseInfo {
 }
 
 div.incomeInfo {
-	background-color: blue;
+	background-color: green;
 	float: left;
+	clear: both;
 }
 
 div.results {
 	background-color: red;
-	/*float: bottom;*/
+	float: left;
 	clear: both;
+}
+
+div.buttons {
+	background-color: purple;
+	clear: both;
+	float: left;
+}
+
+div.loanSettings {
+	background-color: purple;
+	clear: both;
+	float: top;
+}
+
+.advanced {
+	display: none;
 }

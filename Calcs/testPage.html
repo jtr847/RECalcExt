@@ -9,20 +9,22 @@
 	<script type="text/javascript" src="expenses.js"></script>
 	<script type="text/javascript" src="metrics.js"></script>
 	<script type="text/javascript" src="defaults.js"></script>
+	<script type="text/javascript" src="advancedCheck.js"></script>
 </head>
 <body>
-<div>
-	<input type="radio" name="loan" value="Trad" checked>Traditional Loan
-	<input type="radio" name="loan" value="FHA">FHA Loan
-	<input type="radio" name="loan" value="Custom">Custom
-	<input type="text" name="loan" value="20" size="1">%
+<div class="loanSettings">
+	<input type="checkbox" name="advanced" id="advancedChk">Show advanced inputs<br>
+	<input type="radio"    name="loan" value="Trad" checked>Traditional Loan
+	<input type="radio"    name="loan" value="FHA">FHA Loan
+	<input type="radio"    name="loan" value="Custom">Custom
+	<input type="text"     name="loan" value="20" size="1">%
 </div>
 <form name="Calc">
 <div class="houseInfo">
 	<table>
 		<th>
 			<td></td>
-			<td>User<br> Defined</td>
+			<td class="advanced">User<br> Defined</td>
 		</th>
 		<tr>
 			<td>Property Purchase Price*:</td>
@@ -33,25 +35,25 @@
 			<td>Cost of Repairs:</td>
 			<td><input type="text" name="repairs" value="0"> </td>
 		</tr>
-		<tr>
+		<tr class="advanced">
 			<td>Closing Costs:</td>
-			<td><input type="text" name="closeCost"></td>
+			<td><input type="text"     name="closeCost"></td>
 			<td><input type="checkbox" name="closeChk"></td>
 		</tr>
-		<tr>
+		<tr class="advanced">
 			<td>Holding Costs:</td>
-			<td><input type="text" name="holdCost"></td>
+			<td><input type="text"     name="holdCost"></td>
 			<td><input type="checkbox" name="holdChk"></td>
 		</tr>
-		<tr>
+		<tr class="advanced">
 			<td id="downPayTxt">Down Payment:</td>
 			<td id="downPay"></td>
 		</tr>
-		<tr>
+		<tr class="advanced">
 			<td>Investment Basis:</td>
 			<td id="investBasis"></td>
 		</tr>
-		<tr>
+		<tr class="advanced">
 			<td>Loan Amount:</td>
 			<td id="loanAmnt"></td>
 		</tr>
@@ -72,60 +74,60 @@
 
 <div class="incomeInfo">
 	<table>
-		<th>
+		<th >
 			<td></td>
-			<td>User<br> Defined</td>
+			<td class="advanced">User<br> Defined</td>
 		</th>
 		<tr>
-			<td>Income from Rent*:</td>
+			<td style="width:150px">Income from Rent*:</td>
 			<td><input type="text" name="incomeRent" value="1500"> </td>
 		</tr>
-		<tr>
+		<tr class="advanced">
 			<td>Other Income:</td>
 			<td><input type="text" name="incomeOther" value="0"> </td>
 		</tr>
-		<tr>
+		<tr class="advanced">
 			<td>Gross Income:</td>
 			<td id="incomeGross">$1500</td>
 		</tr>
-		<tr>
+		<tr class="advanced">
 			<td>Monthly Property Tax:</td>
-			<td><input type="text" name="tax"></td>
+			<td><input type="text"     name="tax"></td>
 			<td><input type="checkbox" name="taxChk"></td>
 		</tr>		
-		<tr>
+		<tr class="advanced">
 			<td>Monthly Insurance:</td>
-			<td><input type="text" name="insurance"></td>
+			<td><input type="text"     name="insurance"></td>
 			<td><input type="checkbox" name="insChk"></td>
 		</tr>
-		<tr>
+		<tr class="advanced">
 			<td>Vacancy:</td>
-			<td><input type="text" name="vacancyCost"></td>
+			<td><input type="text"     name="vacancyCost"></td>
 			<td><input type="checkbox" name="vacChk"></td>
 		</tr>
-		<tr>
+		<tr class="advanced">
 			<td>Property Management Cost:</td>
-			<td><input type="text" name="managementCost"></td>
+			<td><input type="text"     name="managementCost"></td>
 			<td><input type="checkbox" name="mgmtChk"></td>
 		</tr>
-		<tr>
+		<tr class="advanced">
 			<td>Capital Reserves:</td>
-			<td><input type="text" name="reserves"></td>
+			<td><input type="text"     name="reserves"></td>
 			<td><input type="checkbox" name="capChk"></td>
 		</tr>
-		<tr>
+		<tr class="advanced">
 			<td>Repairs:</td>
-			<td><input type="text" name="repairCost"></td>
+			<td><input type="text"     name="repairCost"></td>
 			<td><input type="checkbox" name="repChk"></td>
 		</tr>
-		<tr>
+		<tr class="advanced">
 			<td>Total Expenses:</td>
 			<td id="totalExp"></td>
 		</tr>
 	</table>
 </div>
 
-<div>
+<div class="buttons">
 	<input type="button" id="calcs" value="Calculate">
 	<input type="button" id="clear" value="Clear"> 
 </div>
@@ -155,13 +157,19 @@
 			<td>Cap Rate:</td>
 			<td>---</td>
 			<td class="spacer"></td>
-			<td id="capRate" ></td>
+			<td id="capRate"></td>
 		</tr>
 		<tr>
 			<td>Cash on Cash Return:</td>
 			<td>---</td>
 			<td class="spacer"></td>
-			<td id="CCR" ></td>
+			<td id="CCR"></td>
+		</tr>
+		<tr>
+			<td>2% Rule:</td>
+			<td>---</td>
+			<td class="spacer"></td>
+			<td id="CCR"></td>
 		</tr>
 	</table>
 </div>
