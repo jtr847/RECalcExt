@@ -13,11 +13,15 @@
 </head>
 <body>
 <div class="loanSettings">
-	<input type="checkbox" name="advanced" id="advancedChk">Show advanced inputs<br>
-	<input type="radio"    name="loan" value="Trad" checked>Traditional Loan
-	<input type="radio"    name="loan" value="FHA">FHA Loan
-	<input type="radio"    name="loan" value="Custom">Custom
-	<input type="text"     name="loan" value="20" size="1">%
+	<table id="settings">
+		<tr><input type="checkbox" name="advanced" id="advancedChk">Show advanced inputs</tr>
+		<tr>
+			<td id="trad"><input type="radio"     name="loan" value="Trad" checked>Traditional Loan</td>
+			<td id="fha"><input type="radio"      name="loan" value="FHA">         FHA Loan        </td>
+			<td id="custom"><input type="radio"   name="loan" value="Custom">      Custom          </td>
+			<td id="custField"><input type="text" name="loan" value="20" size="1"> %               </td>
+		</tr>
+	</table>
 </div>
 <form name="Calc">
 <div class="houseInfo">
@@ -28,8 +32,7 @@
 		</th>
 		<tr>
 			<td>Property Purchase Price*:</td>
-			<td><input type="text" name="price" value="100000"> </td>		
-			<td></td>
+			<td><input type="text" name="price" value="100000"> </td>
 		</tr>
 		<tr>
 			<td>Cost of Repairs:</td>
@@ -79,7 +82,7 @@
 			<td class="advanced">User<br> Defined</td>
 		</th>
 		<tr>
-			<td style="width:150px">Income from Rent*:</td>
+			<td>Income from Rent*:</td>
 			<td><input type="text" name="incomeRent" value="1500"> </td>
 		</tr>
 		<tr class="advanced">
@@ -134,7 +137,7 @@
 </form>
 
 <div class="results">
-	<table id="results">
+	<table id="results" border="1">
 		<tr>
 			<th></th>
 			<th>Monthly</th>

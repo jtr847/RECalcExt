@@ -1,5 +1,5 @@
 html * {
-	font-size: 14px !important;	
+	font-size: 14px !important;
 }
 
 td.spacer {
@@ -8,33 +8,63 @@ td.spacer {
 
 div.houseInfo {
 	background-color: green;
-	float: left;
+	float: 			  left;
 }
 
 div.incomeInfo {
 	background-color: green;
-	float: left;
-	clear: both;
+	float: 			  left;
+	clear:			  both;
 }
 
 div.results {
 	background-color: red;
-	float: left;
-	clear: both;
+	float: 			  left;
+	clear:			  both;
 }
 
 div.buttons {
 	background-color: purple;
-	clear: both;
-	float: left;
+	clear: 			  both;
+	float:            left;
 }
 
 div.loanSettings {
 	background-color: purple;
-	clear: both;
-	float: top;
+	clear: 			  both;
+	float: 			  top;
 }
 
 .advanced {
 	display: none;
 }
+
+#trad {
+	min-width: 120px;
+}
+
+#fha {
+	min-width: 90px;
+}
+
+#custom {
+	min-width: 75px;
+}
+
+#custField {
+	min-width: 75px;
+}
+
+.incomeInfo tr td, .houseInfo tr td{
+	min-width: 150px;
+}
+
+.buttons input {
+	min-width: 155px;
+}
+
+
+
+/*td { 
+	min-width: 150px;
+}*/
