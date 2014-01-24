@@ -14,4 +14,8 @@ var defaults = function() {
 	document.getElementById('cashFlow').innerHTML    = '';
 	document.getElementById('capRate').innerHTML     = '';
 	document.getElementById('CCR').innerHTML         = '';
+	document.getElementById('2perRuleStr').innerHTML = '';
+	document.getElementById('2perRule').innerHTML    = '';
+
+	document.getElementById('2perRuleStr').style.backgroundColor = 'white';
 }

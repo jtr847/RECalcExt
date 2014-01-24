@@ -1,36 +1,32 @@
-html * {
-	font-size: 14px !important;
-}
-
 td.spacer {
 	width: 2em;
 }
 
 div.houseInfo {
-	background-color: green;
+	/*background-color: green;*/
 	float: 			  left;
 }
 
 div.incomeInfo {
-	background-color: green;
+	/*background-color: green;*/
 	float: 			  left;
 	clear:			  both;
 }
 
 div.results {
-	background-color: red;
+	/*background-color: blue;*/
 	float: 			  left;
 	clear:			  both;
 }
 
 div.buttons {
-	background-color: purple;
+	/*background-color: purple;*/
 	clear: 			  both;
 	float:            left;
 }
 
 div.loanSettings {
-	background-color: purple;
+	/*background-color: purple;*/
 	clear: 			  both;
 	float: 			  top;
 }
@@ -44,19 +40,15 @@ div.loanSettings {
 }
 
 #fha {
-	min-width: 90px;
+	min-width: 95px;
 }
 
-#custom {
-	min-width: 75px;
-}
-
-#custField {
+#custom, #custField {
 	min-width: 75px;
 }
 
 .incomeInfo tr td, .houseInfo tr td{
-	min-width: 150px;
+	min-width: 160px;
 }
 
 .buttons input {

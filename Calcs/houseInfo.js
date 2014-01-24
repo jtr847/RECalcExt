@@ -11,16 +11,14 @@ var houseInfo = function (price){
 		var downpayment = fhaDownPayment(price);
 	}else if (cust) {
 		var downpayment = custDownPayment(price);
-	}
-	
+	}	
 	
 	// Closing costs
 	if (document.getElementsByName('closeChk')[0].checked) {
 		closeCost = Math.round(document.getElementsByName('closeCost')[0].value*100)/100;
 	}else {
 		closeCost = closingCosts(price);
-	}
-	
+	}	
 
 	// Holding costs
 	if (document.getElementsByName('holdChk')[0].checked) {
@@ -28,7 +26,6 @@ var houseInfo = function (price){
 	}else {
 		holdCost = holdingCosts(price);
 	}
-
 	
 	// Initial cost of repairs
 	var repairCost = Math.round(document.getElementsByName('repairs')[0].value * 100)/100;
@@ -37,6 +34,8 @@ var houseInfo = function (price){
 	document.getElementById("investBasis").innerHTML = '$'+investBasis;
 	return [downpayment, investBasis];
 }
+
+
 
 
 var tradDownPayment = function (price) {
