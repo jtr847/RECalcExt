@@ -28,7 +28,7 @@
 	<table>
 		<th>
 			<td></td>
-			<td class="advanced">User<br> Defined</td>
+			<td class="advanced" class="thirdRow">User<br> Defined</td>
 		</th>
 		<tr>
 			<td>Property Purchase Price*:</td>
@@ -41,12 +41,12 @@
 		<tr class="advanced">
 			<td>Closing Costs:</td>
 			<td><input type="text"     name="closeCost"></td>
-			<td><input type="checkbox" name="closeChk"></td>
+			<td class="thirdRow"><input type="checkbox" name="closeChk"></td>
 		</tr>
 		<tr class="advanced">
 			<td>Holding Costs:</td>
 			<td><input type="text"     name="holdCost"></td>
-			<td><input type="checkbox" name="holdChk"></td>
+			<td class="thirdRow"><input type="checkbox" name="holdChk"></td>
 		</tr>
 		<tr class="advanced">
 			<td id="downPayTxt">Down Payment:</td>
@@ -79,7 +79,7 @@
 	<table>
 		<th >
 			<td></td>
-			<td class="advanced">User<br> Defined</td>
+			<td class="advanced" >User<br> Defined</td>
 		</th>
 		<tr>
 			<td>Income from Rent*:</td>
@@ -96,32 +96,32 @@
 		<tr class="advanced">
 			<td>Monthly Property Tax:</td>
 			<td><input type="text"     name="tax"></td>
-			<td><input type="checkbox" name="taxChk"></td>
+			<td class="thirdRow"><input type="checkbox" name="taxChk"></td>
 		</tr>		
 		<tr class="advanced">
 			<td>Monthly Insurance:</td>
 			<td><input type="text"     name="insurance"></td>
-			<td><input type="checkbox" name="insChk"></td>
+			<td class="thirdRow"><input type="checkbox" name="insChk"></td>
 		</tr>
 		<tr class="advanced">
 			<td>Vacancy:</td>
 			<td><input type="text"     name="vacancyCost"></td>
-			<td><input type="checkbox" name="vacChk"></td>
+			<td class="thirdRow"><input type="checkbox" name="vacChk"></td>
 		</tr>
 		<tr class="advanced">
 			<td>Property Management Cost:</td>
 			<td><input type="text"     name="managementCost"></td>
-			<td><input type="checkbox" name="mgmtChk"></td>
+			<td class="thirdRow"><input type="checkbox" name="mgmtChk"></td>
 		</tr>
 		<tr class="advanced">
 			<td>Capital Reserves:</td>
 			<td><input type="text"     name="reserves"></td>
-			<td><input type="checkbox" name="capChk"></td>
+			<td class="thirdRow"><input type="checkbox" name="capChk"></td>
 		</tr>
 		<tr class="advanced">
 			<td>Repairs:</td>
 			<td><input type="text"     name="repairCost"></td>
-			<td><input type="checkbox" name="repChk"></td>
+			<td class="thirdRow"><input type="checkbox" name="repChk"></td>
 		</tr>
 		<tr class="advanced">
 			<td>Total Expenses:</td>
@@ -133,13 +133,12 @@
 <div class="buttons">
 	<br>
 	<input type="button" id="calcs" value="Calculate">
-	<input type="button" id="clear" value="Clear">
+	<input type="button" id="clear" value="Clear"><br></br>
 </div>
 </form>
 
 <div class="results">
-	<table id="results" border="1">
-	<br>
+	<table id="results">
 		<tr>
 			<th></th>
 			<th>Monthly</th>

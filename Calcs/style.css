@@ -1,34 +1,48 @@
-td.spacer {
-	width: 2em;
+body {
+	background-color: #4D505B;
+}
+
+div {
+	border-radius:	  10px;
+	min-width: 		  400px;
+}
+
+div.loanSettings {
+	background-color: #006699;
+	clear: 			  both;
+	float: 			  top;
 }
 
 div.houseInfo {
-	/*background-color: green;*/
+	background-color: #FF9C5F;
 	float: 			  left;
 }
 
 div.incomeInfo {
-	/*background-color: green;*/
-	float: 			  left;
-	clear:			  both;
-}
-
-div.results {
-	/*background-color: blue;*/
+	background-color: #16A79D;
 	float: 			  left;
 	clear:			  both;
 }
 
 div.buttons {
-	/*background-color: purple;*/
+	background-color: #8BC53F;
 	clear: 			  both;
 	float:            left;
 }
 
-div.loanSettings {
-	/*background-color: purple;*/
-	clear: 			  both;
-	float: 			  top;
+div.results {
+	background-color: #F4AC42;
+	float: 			  left;
+	clear:			  both;
+}
+
+
+.thirdRow {
+	max-width: 50px;
+}
+
+#results {
+	font-size: 20px;
 }
 
 .advanced {
@@ -52,11 +66,10 @@ div.loanSettings {
 }
 
 .buttons input {
-	min-width: 155px;
+	min-width:  190px;
+	min-height: 40px
 }
 
-
-
-/*td { 
-	min-width: 150px;
-}*/
+td.spacer {
+	width: 2em;
+}

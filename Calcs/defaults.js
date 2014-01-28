@@ -17,5 +17,5 @@ var defaults = function() {
 	document.getElementById('2perRuleStr').innerHTML = '';
 	document.getElementById('2perRule').innerHTML    = '';
 
-	document.getElementById('2perRuleStr').style.backgroundColor = 'white';
+	document.getElementById('2perRuleStr').style.backgroundColor = '#F4AC42';
 }

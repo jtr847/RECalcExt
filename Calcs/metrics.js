@@ -32,7 +32,7 @@ var monthlyCashFlow = function (NOI, monPay){
 // Annual cap rate (NOI / purchase price)
 var capRate = function (NOI, price){
 	var cap = Math.round((NOI / price) * 10000) / 10000;
-	document.getElementById('capRate').innerHTML = 100*cap+'%';
+	document.getElementById('capRate').innerHTML = 100*cap.toFixed(4)+'%';
 	return cap;
 }
 
