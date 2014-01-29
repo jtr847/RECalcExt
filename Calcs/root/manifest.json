@@ -3,10 +3,13 @@
 
   "name": "RE Investment Calculator",
   "description": "This extension performs calculations relavent to rental property investments",
+  "icons": { "16" : "images/house_icon.png",
+  			 "48" : "images/house_48.png",
+  			 "128": "images/house_128.png"},
   "version": "1.0",
 
   "browser_action": {
-    "default_icon": "house_icon.png",
+    "default_icon":  "images/house_icon.png",
     "default_popup": "testPage.html"
   }
 }
