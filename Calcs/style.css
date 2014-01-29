@@ -14,24 +14,18 @@ div.loanSettings {
 }
 
 div.houseInfo {
-	background-color: #FF9C5F;
+	background-color: #0F9C82;
 	float: 			  left;
 }
 
 div.incomeInfo {
-	background-color: #16A79D;
+	background-color: #38AD14;
 	float: 			  left;
 	clear:			  both;
 }
 
-div.buttons {
-	background-color: #8BC53F;
-	clear: 			  both;
-	float:            left;
-}
-
 div.results {
-	background-color: #F4AC42;
+	background-color: #537353;
 	float: 			  left;
 	clear:			  both;
 }
@@ -65,7 +59,7 @@ div.results {
 	min-width: 160px;
 }
 
-.buttons input {
+.results input {
 	min-width:  190px;
 	min-height: 40px
 }
